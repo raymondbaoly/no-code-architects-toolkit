@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 def process_image_to_video(image_url, length, frame_rate, zoom_speed, job_id, webhook_url=None):
     try:
         # Download the image file
-        image_path = download_file(image_url, STORAGE_PATH)
+        image_path = download_file(image_url, STORAGE_PATH, verify_ssl=False)
         logger.info(f"Downloaded image to {image_path}")
 
         # Get image dimensions using Pillow

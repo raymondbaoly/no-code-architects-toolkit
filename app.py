@@ -153,6 +153,7 @@ def create_app():
 
     # version 1.0
     from routes.v1.ffmpeg.ffmpeg_compose import v1_ffmpeg_compose_bp
+    from routes.v1.video.metadata import v1_video_metadata_bp
     from routes.v1.media.media_transcribe import v1_media_transcribe_bp
     from routes.v1.media.feedback import v1_media_feedback_bp
     from routes.v1.media.convert.media_to_mp3 import v1_media_convert_mp3_bp
@@ -178,6 +179,7 @@ def create_app():
     app.register_blueprint(v1_media_convert_mp3_bp)
     app.register_blueprint(v1_video_concatenate_bp)
     app.register_blueprint(v1_video_caption_bp)
+    app.register_blueprint(v1_video_metadata_bp)
     app.register_blueprint(v1_image_convert_video_bp)
     app.register_blueprint(v1_toolkit_test_bp)
     app.register_blueprint(v1_toolkit_auth_bp)
